@@ -1,13 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shirley He</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shirley He | Data Science Student at UC Davis</title>
+<meta name="description" content="Shirley He is a UC Davis data science student interested in data analytics, business analytics, healthcare analytics, risk, and actuarial work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f7f8; --surface:#ffffff; --ink:#12263a; --muted:#52667a;
+  --line:#d5dee5; --accent:#0e7c7b; --accent-soft:#d9eeee; --mark:#e9a23b;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0f1c29; --surface:#162636; --ink:#e8eff4; --muted:#9db1c2;
+         --line:#27405a; --accent:#4fc3c1; --accent-soft:#16373f; --mark:#f0b45a; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,serif;line-height:1.15;margin:0}
+
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--ink);text-decoration:none}
+nav a{margin-left:1.25rem;color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+
+.hero{padding:4.5rem 0 3rem}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:700;letter-spacing:-.02em;max-width:16ch}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:40rem;margin:1.25rem 0 1.75rem}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.65rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+
+.chart{margin-top:3rem;border-top:1px solid var(--line);padding-top:1.25rem}
+.chart svg{width:100%;height:auto;display:block}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s ease-out .3s forwards}
+.chart .area{fill:var(--accent-soft);opacity:0;animation:fade 1s ease-out 2s forwards}
+.chart .dot{fill:var(--mark);opacity:0;animation:fade .4s ease-out 2.4s forwards}
+.chart text{fill:var(--muted);font:500 12px "Instrument Sans",sans-serif}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .chart .line{animation:none;stroke-dashoffset:0}
+  .chart .area,.chart .dot{animation:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+
+section{padding:3.25rem 0;border-top:1px solid var(--line)}
+section h2{font-size:1.8rem;margin-bottom:1.25rem}
+section p{max-width:42rem;margin:0 0 1rem}
+.interests{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;padding:0;list-style:none}
+.interests li{background:var(--accent-soft);color:var(--ink);padding:.3rem .8rem;border-radius:999px;font-size:.95rem;font-weight:500}
+
+.project{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:1.4rem 1.5rem;margin-bottom:1.25rem}
+.project:nth-of-type(2){border-left-color:var(--mark)}
+.project h3{font-size:1.3rem;margin-bottom:.2rem}
+.meta{color:var(--muted);font-size:.95rem;margin:0 0 .75rem}
+.project ul,.job ul{margin:.5rem 0 0;padding-left:1.2rem}
+.project li,.job li{margin-bottom:.35rem}
+
+.job{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.job:last-of-type{border-bottom:none}
+.job .when{color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.15rem}
+.job .org{color:var(--muted);margin:.1rem 0 .4rem}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:.25rem}}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.skills h3{font-size:1.05rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+</style>
 </head>
 <body>
-  <h1>Hi, I'm Shirley He</h1>
-  <p>Welcome to my personal website!</p>
-  <a href="https://github.com/shirleyhe-ds">GitHub</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Shirley He</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>I turn data into clear answers.</h1>
+      <p class="lead">I'm Shirley He, a data science student at UC Davis. I like finding the pattern in a messy dataset and explaining what it means for the people who have to make a decision.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <div class="chart" aria-hidden="true">
+        <svg viewBox="0 0 800 170" preserveAspectRatio="none">
+          <line class="grid" x1="0" y1="40" x2="800" y2="40"/>
+          <line class="grid" x1="0" y1="90" x2="800" y2="90"/>
+          <line class="grid" x1="0" y1="140" x2="800" y2="140"/>
+          <path class="area" d="M0 130 L100 118 L200 124 L300 96 L400 102 L500 70 L600 76 L700 42 L800 30 L800 140 L0 140 Z"/>
+          <path class="line" pathLength="1" d="M0 130 L100 118 L200 124 L300 96 L400 102 L500 70 L600 76 L700 42 L800 30"/>
+          <circle class="dot" cx="800" cy="30" r="6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <p>I'm studying Data Science at UC Davis (expected graduation June 2029) with a 3.86 GPA. I enjoy the full path from raw data to a recommendation: cleaning it, exploring it, modeling it, and presenting what I found.</p>
+      <p>I'm also a people person. I've supported 30+ new students at Global Affairs, tutored IELTS students, and now meet with student organizations as a grants intern. I want a career where I can analyze data and explain the results directly to the people who use them.</p>
+      <p>I'm still exploring where I fit best, and these are the areas I'm most curious about:</p>
+      <ul class="interests">
+        <li>Data analytics</li>
+        <li>Business analytics</li>
+        <li>Healthcare data</li>
+        <li>Risk analysis</li>
+        <li>Actuarial science</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3>Environmental Factors and Housing Burden Analysis</h3>
+        <p class="meta">Python, pandas, Matplotlib. April to June 2026</p>
+        <p>I cleaned and analyzed 8,000+ environmental and socioeconomic records to see how environmental risk relates to socioeconomic status across California.</p>
+        <ul>
+          <li>Ran exploratory analysis on county-level data</li>
+          <li>Built visualizations that show geographic trends</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <h3>Heart Disease Risk Prediction</h3>
+        <p class="meta">Python, scikit-learn, pandas. January to March 2026</p>
+        <p>I built a Random Forest model that predicts heart disease risk from 300+ patient records, reaching 91% classification accuracy.</p>
+        <ul>
+          <li>Handled data cleaning, feature engineering, and hyperparameter tuning</li>
+          <li>Compared several classification models before choosing the final one</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <h3>Spotify Listening Data Analysis</h3>
+        <p class="meta">R, tidyverse, ggplot2. September to December 2025</p>
+        <p>I analyzed 350,000+ streaming records to find listening trends, using tidyverse for cleaning and ggplot2 for visualization.</p>
+      </article>
+
+      <p>Code for each project is on <a href="https://github.com/shirleyhe-ds">my GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="when">June to July 2026</div>
+        <div>
+          <h3>Data Analytics Intern</h3>
+          <p class="org">Taiping Insurance Company</p>
+          <ul>
+            <li>Analyzed 260,000+ customer and policy records in Excel to find customer segments and product demand trends</li>
+            <li>Studied 331,066 employer liability policies and 290,025 claims to find what drives claim payout ratios</li>
+            <li>Compared regional branch performance across 42,592 policies and 4,212 claims, including loss ratios and claim frequency</li>
+            <li>Wrote reports and PivotTable summaries to support underwriting and risk recommendations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">September 2026 to present</div>
+        <div>
+          <h3>Grants Intern</h3>
+          <p class="org">UC Davis Center for Student Involvement</p>
+          <ul>
+            <li>Review student organization grant applications against program criteria</li>
+            <li>Meet with student leaders to clarify proposals and funding requests</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">September 2026 to present</div>
+        <div>
+          <h3>Student Assistant</h3>
+          <p class="org">UC Davis Development and Alumni Relations</p>
+          <ul>
+            <li>Research prospective donors and keep constituent records accurate in Ellucian Advancement</li>
+            <li>Evaluate financial capacity and philanthropic potential to help prioritize outreach</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">April to September 2026</div>
+        <div>
+          <h3>Student Learning Assistant</h3>
+          <p class="org">Global Affairs, UC Davis</p>
+          <ul>
+            <li>Supported 30+ Summer Start students with academic resources and campus life</li>
+            <li>Worked with a 13-member team to coordinate program support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Programming</h3><p>Python, R, MATLAB</p></div>
+        <div><h3>Libraries and tools</h3><p>pandas, NumPy, scikit-learn, Matplotlib, ggplot2, tidyverse, Excel, Git, GitHub</p></div>
+        <div><h3>Analysis</h3><p>Exploratory analysis, data cleaning, feature engineering, machine learning, predictive modeling, data visualization, risk analysis</p></div>
+        <div><h3>Languages</h3><p>Mandarin (native), English (fluent)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>I'm open to internships and to conversations about data, analytics, and actuarial careers. The best way to reach me is by email.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:xiyhe@ucdavis.edu">xiyhe@ucdavis.edu</a>
+        <a class="btn ghost" href="https://linkedin.com/in/shirley-he">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/shirleyhe-ds">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Shirley He, Davis, California</div>
+</footer>
+
 </body>
 </html>
