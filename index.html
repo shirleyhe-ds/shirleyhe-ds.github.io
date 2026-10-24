@@ -61,10 +61,19 @@ section p{max-width:42rem;margin:0 0 1rem}
 .interests{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;padding:0;list-style:none}
 .interests li{background:var(--accent-soft);color:var(--ink);padding:.3rem .8rem;border-radius:999px;font-size:.95rem;font-weight:500}
 
-.project{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:1.4rem 1.5rem;margin-bottom:1.25rem}
-.project:nth-of-type(2){border-left-color:var(--mark)}
-.project h3{font-size:1.3rem;margin-bottom:.2rem}
-.meta{color:var(--muted);font-size:.95rem;margin:0 0 .75rem}
+.project{display:grid;grid-template-columns:230px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--line)}
+.project:last-of-type{border-bottom:none}
+.project figure{margin:0}
+.project .shot{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;border:1px solid var(--line);background:var(--accent-soft)}
+.project h3{font-size:1.5rem;margin-bottom:.25rem}
+.meta{color:var(--muted);font-size:1rem;margin:0 0 .6rem}
+.badge{display:inline-block;margin:0 0 .5rem;padding:.15rem .8rem;border-radius:999px;font-size:.95rem;font-weight:500;background:#dff1e3;color:#1f6b36}
+@media (prefers-color-scheme:dark){.badge{background:#1b3a28;color:#7fd69a}}
+.project h4{font-family:"Bricolage Grotesque",Georgia,serif;font-size:1.1rem;margin:1rem 0 .2rem}
+.project p{margin:.5rem 0;max-width:none}
+.label{font-weight:600}
+.repo{display:inline-block;margin-top:.4rem;font-weight:600}
+@media (max-width:640px){.project{grid-template-columns:1fr}.project .shot{aspect-ratio:16/10}}
 .project ul,.job ul{margin:.5rem 0 0;padding-left:1.2rem}
 .project li,.job li{margin-bottom:.35rem}
 
@@ -140,32 +149,55 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
       <h2>Projects</h2>
 
       <article class="project">
-        <h3>Environmental Factors and Housing Burden Analysis</h3>
-        <p class="meta">Python, pandas, Matplotlib. Apr 2026 - Jun 2026</p>
-        <p>I cleaned and analyzed 8,000+ environmental and socioeconomic records to see how environmental risk relates to socioeconomic status across California.</p>
-        <ul>
-          <li>Ran exploratory analysis on county-level data</li>
-          <li>Built visualizations that show geographic trends</li>
-        </ul>
+        <figure><img class="shot" src="housing-burden.png" alt="Map of California census tracts colored by housing burden" loading="lazy" onerror="this.style.visibility='hidden'"></figure>
+        <div>
+          <h3>1. Environmental Factors &amp; Housing Burden</h3>
+          <p class="meta">Python · pandas · Matplotlib</p>
+          <span class="badge">Featured</span>
+          <p><span class="label">The question:</span> How do environmental risk factors and socioeconomic conditions relate across California counties?</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Cleaned and analyzed 8,000+ environmental and socioeconomic records.</li>
+            <li>Explored geographic patterns and relationships between environmental risks and housing burden.</li>
+            <li>Created visualizations to communicate county-level trends.</li>
+          </ul>
+          <p><span class="label">What this demonstrates:</span> Data cleaning, exploratory data analysis, visualization, and the ability to investigate a real-world social issue.</p>
+          <a class="repo" href="https://github.com/shirleyhe-ds">View code on GitHub</a>
+        </div>
       </article>
 
       <article class="project">
-        <h3>Heart Disease Risk Prediction</h3>
-        <p class="meta">Python, scikit-learn, pandas. Jan 2026 - Mar 2026</p>
-        <p>I built a Random Forest model that predicts heart disease risk from 300+ patient records, reaching 91% classification accuracy.</p>
-        <ul>
-          <li>Handled data cleaning, feature engineering, and hyperparameter tuning</li>
-          <li>Compared several classification models before choosing the final one</li>
-        </ul>
+        <figure><img class="shot" src="heart-disease.png" alt="Chart showing the heart disease prediction model results" loading="lazy" onerror="this.style.visibility='hidden'"></figure>
+        <div>
+          <h3>2. Heart Disease Risk Prediction</h3>
+          <p class="meta">Python · scikit-learn · pandas</p>
+          <p><span class="label">The question:</span> Can patient health records be used to predict who is at risk of heart disease?</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Cleaned and prepared a dataset containing 300+ patient records.</li>
+            <li>Built and evaluated a Random Forest classifier.</li>
+            <li>Reported 91% classification accuracy and explored model tuning.</li>
+          </ul>
+          <p><span class="label">What this demonstrates:</span> Machine learning, model evaluation, and an interest in healthcare analytics.</p>
+          <a class="repo" href="https://github.com/shirleyhe-ds">View code on GitHub</a>
+        </div>
       </article>
 
       <article class="project">
-        <h3>Spotify Listening Data Analysis</h3>
-        <p class="meta">R, tidyverse, ggplot2. Sep 2025 - Dec 2025</p>
-        <p>I analyzed 350,000+ streaming records to find listening trends, using tidyverse for cleaning and ggplot2 for visualization.</p>
+        <figure><img class="shot" src="spotify.png" alt="Chart of Spotify listening trends" loading="lazy" onerror="this.style.visibility='hidden'"></figure>
+        <div>
+          <h3>3. Spotify Listening Data Analysis</h3>
+          <p class="meta">R · tidyverse · ggplot2</p>
+          <p><span class="label">The question:</span> What patterns and trends appear in large-scale music streaming data?</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Cleaned and transformed 350,000+ streaming records.</li>
+            <li>Explored listening trends and summarized findings through visualizations.</li>
+          </ul>
+          <p><span class="label">What this demonstrates:</span> R programming, data wrangling, visualization, and the ability to work with large datasets.</p>
+          <a class="repo" href="https://github.com/shirleyhe-ds">View code on GitHub</a>
+        </div>
       </article>
-
-      <p>Code for each project is on <a href="https://github.com/shirleyhe-ds">my GitHub</a>.</p>
     </div>
   </section>
 
@@ -173,7 +205,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
     <div class="wrap">
       <h2>Experience</h2>
 
-      <div class="job">
+       <div class="job">
         <div class="when">Jun 2026 - Jul 2026</div>
         <div>
           <h3>Data Analytics Intern</h3>
@@ -181,9 +213,10 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
           <ul>
             <li>During my internship at Taiping, I worked with large-scale sales, policy, and claims datasets to explore customer behavior and insurance risk. Using Excel and PivotTables, I analyzed more than 260,000 customer and policy records to identify customer segments and product demand trends. I also examined hundreds of thousands of insurance policies and claims to investigate loss ratios, claims frequency, and payout patterns across industries and regional branches. This experience showed me how data analysis can support business strategy, underwriting, and risk management decisions.</li>
           </ul>
+          <a class="repo" href="insurance-customer-growth.pdf" target="_blank" rel="noopener">Read the project proposal (PDF)</a>
         </div>
       </div>
-
+      
       <div class="job">
         <div class="when">Sep 2026 - present</div>
         <div>
@@ -224,8 +257,8 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
       <h2>Skills</h2>
       <div class="skills">
         <div><h3>Programming</h3><p>Python, R, MATLAB</p></div>
-        <div><h3>Libraries and tools</h3><p>pandas, NumPy, scikit-learn, Matplotlib, ggplot2, tidyverse, Excel, Git, GitHub</p></div>
-        <div><h3>Techniques</h3><p>Exploratory data analysis, data cleaning, feature engineering, machine learning, predictive modeling, data visualization, risk analysis</p></div>
+        <div><h3>Libraries and tools</h3><p>pandas, NumPy, scikit-learn, Matplotlib, ggplot2, tidyverse, Excel, Git, GitHub, Microsoft workspace, Google workspace</p></div>
+        <div><h3>Techniques</h3><p>EDA, data cleaning, feature engineering, machine learning, predictive modeling, data visualization, risk analysis</p></div>
         <div><h3>Languages</h3><p>Mandarin (native), English (fluent)</p></div>
       </div>
     </div>
@@ -245,7 +278,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
 </main>
 
 <footer>
-  <div class="wrap">Shirley He, Davis, California</div>
+  <div class="wrap">Shirley He, Davis, CA 95616</div>
 </footer>
 
 </body>
